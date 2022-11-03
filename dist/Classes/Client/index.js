@@ -65,9 +65,9 @@ class ExtendedClient extends discord_js_1.Client {
         for (const event in Events_1.default) {
             if (event !== '__esModule') {
                 if (Events_1.default[event].once)
-                    this.once(event, (...args) => { Events_1.default[event].run(this, ...args); });
+                    this.once(Events_1.default[event].name, (...args) => { Events_1.default[event].run(this, ...args); });
                 else
-                    this.on(event, (...args) => { Events_1.default[event].run(this, ...args); });
+                    this.on(Events_1.default[event].name, (...args) => { Events_1.default[event].run(this, ...args); });
             }
         }
     }
