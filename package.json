@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Maniel73/PriscilaBot#readme",
   "dependencies": {
+    "@replit/database": "^2.0.2",
     "discord.js": "^14.6.0",
     "mongodb": "^4.11.0"
   }

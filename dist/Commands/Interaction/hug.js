@@ -19,9 +19,7 @@ exports.hug = {
     run: async function (client, inter) {
         const username = inter.options.getUser("usuario", true).username;
         const description = `**${inter.user.username} ha abrazado a ${username}**`;
-        const arrayOfAny = await client.db.collection(`fun_${this.name}`).find().toArray();
-        let images = [];
-        arrayOfAny.forEach(el => { images[images.length] = el.toString(); });
+        let images = await client.getDB(`url_${this.name}`);
         const fun = new Commands_1.Fun(this.name, description, images);
         const embed = fun.generateEmbed();
         inter.editReply({ embeds: [embed] });
